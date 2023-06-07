@@ -14,6 +14,9 @@ const HostLayout=()=>{
             to="/host/income">Income</NavLink>
             <NavLink 
             className={classNameFunc}
+            to="/host/service">Service</NavLink>
+            <NavLink 
+            className={classNameFunc}
             to="/host/reviews">Reviews</NavLink>
             </nav>
            <Outlet></Outlet>

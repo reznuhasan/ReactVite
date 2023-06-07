@@ -8,6 +8,10 @@ import Dashboard from './Components/Host/Dashboard'
 import Income from './Components/Host/Income'
 import Reviews from './Components/Host/Reviews'
 import HostLayout from './Components/Layout/HostLayout'
+import Details from './Components/CountryInfo/Details'
+import Population from './Components/CountryInfo/Population'
+import Others from './Components/CountryInfo/Others'
+import CountryLayout from './Components/Layout/CountryLayout'
 
 function App() {
 
@@ -16,13 +20,20 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route path='/' element={<Home></Home>} />
+            <Route index element={<Home></Home>} />
             <Route path='service' element={<Service />} />
-            <Route path="/service/:name" element={<Country />} />
-            <Route path='/host' element={<HostLayout />}>
-              <Route path="/host" element={<Dashboard />} />
-              <Route path="/host/income" element={<Income />} />
-              <Route path="/host/reviews" element={<Reviews />} />
+            <Route path="service/:name" element={<Country />} />
+            <Route path='host' element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path='service' element={<Service/>}/>
+              <Route path="service/:name" element={<CountryLayout/>}>
+                <Route index element={<Details/>}/>
+                <Route path='population' element={<Population/>}/>
+                <Route path='others' element={<Others/>}/>
+              </Route>
+              <Route path="reviews" element={<Reviews />} />
+
             </Route>
           </Route> 
 

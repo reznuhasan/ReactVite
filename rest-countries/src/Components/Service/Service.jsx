@@ -14,7 +14,7 @@ const Service=()=>{
     },[])
     return(
         <div>
-            <h1>Total Countries{coutries.length}</h1>
+            <h1>Total Countries:{coutries.length}</h1>
             <div className={Styles.countries}>
                 {
                   coutries.map(country=><Countries country={country} key={country?.name?.common}></Countries>)
