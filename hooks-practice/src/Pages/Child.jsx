@@ -4,6 +4,7 @@ import { MyContext } from '../components/usecontext/myContext'
 import { rizwanContext } from '../components/usecontext/rizwanContext'
 
 function Child() {
+
     const myData=useContext(MyContext)
     console.log(myData)
     const rizwanData=useContext(rizwanContext);

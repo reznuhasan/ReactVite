@@ -1,10 +1,13 @@
 import GrandParent from "./Pages/GrandParent"
+import Reducer from "./Pages/Reducer"
+import Counter from "./Pages/counter"
 
 function App() {
 
   return (
     <>
-      <h1>Hello From React</h1>
+      <Reducer/>
+      <Counter></Counter>
       <GrandParent/>
     </>
   )
