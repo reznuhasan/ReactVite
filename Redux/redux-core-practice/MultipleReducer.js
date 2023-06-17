@@ -1,4 +1,5 @@
-const { createStore, combineReducers } = require("redux");
+const { createStore, combineReducers,applyMiddleware} = require("redux");
+const { default: logger } = require("redux-logger");
 
 const getProduct = "GET_PRODUCT";
 const addProduct = "ADD_PRODUCT";
@@ -88,7 +89,7 @@ const rootReducer = combineReducers({
     product: productReducer,
     cart: cartReducer
 })
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,applyMiddleware(logger));
 store.dispatch(addProductFunc("apple"));
 store.dispatch(removeProductFunc("sugar"))
 store.dispatch(removeProductFunc("salt"))
