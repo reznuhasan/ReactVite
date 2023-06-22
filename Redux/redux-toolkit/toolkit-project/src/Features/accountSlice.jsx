@@ -11,13 +11,13 @@ const accountSlice=createSlice({
     initialState,
     reducers:{
         increment:(state,action)=>{
-            state.count=state.count+1
+            state.count+=1
         },
         decrement:(state,action)=>{
-            state.count=state.count-1
+            state.count-=1
         },
         increseByValue:(state,action)=>{
-            state.count=state.count+action.payload
+          state.count+=action.payload
         },
     }
 })

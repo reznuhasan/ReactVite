@@ -8,12 +8,12 @@ const bonusSlice=createSlice({
     name:"bonus",
     initialState,
     reducers:{
-        pIncrement:(state,action)=>{
+        increment:(state,action)=>{
             state.point=state.point+1
         }
     }
 
 })
-export const {pIncrement} =bonusSlice.actions
+export const {increment} =bonusSlice.actions
 
 export default bonusSlice.reducer

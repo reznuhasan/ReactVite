@@ -9,15 +9,18 @@ function Account() {
     const changedValue=(e)=>{
         setValue(e.target.value)
     }
-   
+   const handleValue=()=>{
+   dispatch(increseByValue(parseInt(value)))
+   setValue("0")
+   }
   return (
     <div>
         <h3>Account Component</h3>
         <h1 style={{color:'yellow'}}>Amount:{count}</h1>
         <button onClick={()=>dispatch(increment())}>Increment+</button>
         <button onClick={()=>dispatch(decrement())}>Decrement-</button>
-        <input type="text" onChange={changedValue}/>
-        <button onClick={()=>dispatch(increseByValue(parseInt(value)))}>Increment By {value} +</button>
+        <input type="text" value={value} onChange={changedValue}/>
+        <button onClick={handleValue}>Increment By {value} +</button>
     </div>
   )
 }

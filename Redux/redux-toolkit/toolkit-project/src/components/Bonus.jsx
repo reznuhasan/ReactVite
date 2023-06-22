@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { pIncrement } from '../Features/bonusSlice'
+import { increment } from '../Features/bonusSlice'
 
 function Bonus() {
     const bonus=useSelector(state=>state.bonus.point)
@@ -9,7 +9,7 @@ function Bonus() {
     <div>
         <h3>Bonus Component</h3>
         <h1 style={{color:'yellow'}}>Total Point:{bonus}</h1>
-        <button onClick={()=>dispatch(pIncrement())}>Increment</button>
+        <button onClick={()=>dispatch(increment())}>Increment</button>
     </div>
   )
 }
