@@ -5,12 +5,14 @@ import Account from './components/Account'
 import Bonus from './components/Bonus'
 
 function App() {
-  const count=useSelector(state=>state.account.count)
+  const {account,bonus}=useSelector(state=>state)
+  const amount=account.count
+  const tBonus=bonus.point
   return (
     <>
       <h1>App</h1>
-      <h1 style={{color:'yellow'}}>Current Amount:{count}</h1>
-      <h1 style={{color:'yellow'}}>Total Bonus:</h1>
+      <h1 style={{color:'yellow'}}>Current Amount:{amount}</h1>
+      <h1 style={{color:'yellow'}}>Total Bonus:{tBonus}</h1>
       <Account/>
       <Bonus/>
 
