@@ -19,9 +19,14 @@ const cartSlice=createSlice({
             }else{
                 state.items.push({...action.payload,quantity:1});
             }
+        },
+        removeToCart(state,action){
+            const prevItems=state.items;
+            const delItem=action.payload;
+            state.items=prevItems.filter(item=>item.id!==delItem.id)
         }
 
     }
 })
-export const {addToCart}=cartSlice.actions;
+export const {addToCart,removeToCart}=cartSlice.actions;
 export default cartSlice.reducer;
