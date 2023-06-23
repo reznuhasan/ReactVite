@@ -1,10 +1,11 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    width: 350px;
     font-family: arial;
     height: 450px;
     margin:10px 5px;
     position: relative;
+    padding: 15px;
   }
   .card img{
     height: 200px;
@@ -18,15 +19,14 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 10px 0px;
-    padding: 0 10px;
   }
   
   .card button {
     border: none;
     outline: 0;
     padding: 12px;
-    color: white;
-    background-color: #000;
+    color: black;
+    background-color: yellow;
     text-align: center;
     cursor: pointer;
     width: 100%;

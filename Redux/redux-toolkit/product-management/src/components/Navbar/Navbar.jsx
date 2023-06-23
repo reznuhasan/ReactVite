@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
+import { useSelector } from 'react-redux'
 function Navbar() {
+    const items=useSelector(state=>state.items.items)
+
   return (
     <div className='navbar'>
         <h1>REDUX STORE</h1>
@@ -16,7 +19,7 @@ function Navbar() {
                 <li>
                 <NavLink to="/cart">Cart</NavLink>
                 <span>
-                    Cart Items:0
+                    Cart Items:{items.length}
                 </span>
                 </li>
             </ul>

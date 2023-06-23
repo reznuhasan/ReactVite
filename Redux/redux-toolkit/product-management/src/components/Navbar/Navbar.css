@@ -16,9 +16,9 @@ li{
 }
 a,span{
     text-decoration: none;
-    color:lightseagreen;
+    color:lightseagreen !important;
     margin:0 10px;
 }
 .active{
-    color:red;
+    color:red !important;
 }

@@ -552,17 +552,6 @@
         "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
       ]
     }
-  ],
-  "carts": [
-    {
-      "id": 1,
-      "title": "iPhone 9",
-      "price": 549,
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-      "rating": 4.69,
-      "stock": 94,
-      "quantity": 1
-    }
   ]
+  
 }
