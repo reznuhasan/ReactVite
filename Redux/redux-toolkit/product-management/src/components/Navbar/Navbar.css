@@ -14,10 +14,13 @@
 li{
     list-style: none;
 }
-a,span{
+a{
     text-decoration: none;
     color:lightseagreen !important;
     margin:0 10px;
+}
+span{
+    color: rgb(48, 42, 165) !important;
 }
 .active{
     color:red !important;
