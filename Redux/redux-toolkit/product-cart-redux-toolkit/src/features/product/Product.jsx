@@ -1,27 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Card, Col } from 'react-bootstrap'
+import { addCartItem } from '../cart/cartSlice'
+import { useDispatch } from 'react-redux'
+function Product({ product }) {
+  const dispatch = useDispatch();
 
-function Product({product}) {
-    const {title,price,rating,stock,category,description,thumbnail}=product
+  const { title, price, rating, stock, category, description, thumbnail } = product
+  const handleItemAdd=()=>{
+    
+    dispatch(addCartItem(product))
+  }
   return (
+  
     <div>
-       <Col>
+      <Col>
+        <Card>
+          <Card.Img variant="top" style={{ height: '300px' }} src={thumbnail} />
           <Card>
-            <Card.Img variant="top" style={{ height: '300px' }} src={thumbnail} />
             <Card.Body>
-              <Card.Title>Name:{title}</Card.Title>
+              <Card.Title>{product.name}</Card.Title>
               <Card.Text>
-                <p>description:{description}</p>
-                <h3>Price:{price}</h3>
-                <div className="d-flex justify-content-between">
-                    <h5>stock:{stock}</h5>
-                    <h5>category:{category}</h5>
-                </div>
+                <p>Price: ${product.price}</p>
+                <p>Description: {product.description}</p>
               </Card.Text>
+              <Button variant="warning" onClick={handleItemAdd}>
+                Add to Cart
+              </Button>
             </Card.Body>
-            <Button variant="warning">Add To Cart</Button>
           </Card>
-        </Col>
+        </Card>
+      </Col>
     </div>
   )
 }

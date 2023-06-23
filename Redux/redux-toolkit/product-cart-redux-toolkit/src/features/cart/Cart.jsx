@@ -1,29 +1,21 @@
 import React from 'react'
 import { Button, Card, Col } from 'react-bootstrap'
 
-function Product({product}) {
-    const {title,price,rating,stock,category,description,thumbnail}=product
+function Cart({item}) {
   return (
     <div>
-       <Col>
-          <Card>
-            <Card.Img variant="top" style={{ height: '300px' }} src={thumbnail} />
-            <Card.Body>
-              <Card.Title>Name:{title}</Card.Title>
-              <Card.Text>
-                <p>description:{description}</p>
-                <h3>Price:{price}</h3>
-                <div className="d-flex justify-content-between">
-                    <h5>stock:{stock}</h5>
-                    <h5>category:{category}</h5>
-                </div>
-              </Card.Text>
-            </Card.Body>
-            <Button variant="warning">Add To Cart</Button>
-          </Card>
-        </Col>
+      <Card className="d-flex">
+      <Card.Img variant="top" style={{ height: '40px' }} src={item.thumbnail} />
+      <Card.Body>
+        <Card.Title>{item.title}</Card.Title>
+        <Card.Text>Price: ${item.price}</Card.Text>
+        {/* <Button variant="danger" onClick={() => onRemove(item.id)}>
+          Remove
+        </Button> */}
+      </Card.Body>
+    </Card>
     </div>
   )
 }
 
-export default Product
+export default Cart

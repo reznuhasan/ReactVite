@@ -1,26 +1,32 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProduct } from './cartSlice';
-import { Row } from 'react-bootstrap';
-import Product from './product';
+import { fetchItem,addCartItem,deleteCartItem,updateCartItem } from './cartSlice';
+import Cart from './cart';
 
-function Products() {
+
+function Carts() {
   const dispatch=useDispatch();
-  const products=useSelector(state=>state.product.products)
+  const items=useSelector(state=>state.cart.items)
   useEffect(()=>{
-    dispatch(fetchProduct())
+    dispatch(fetchItem())
   },[])
+  
   return (
     <div>
-          <h1>Total Product:{products.length}</h1>
-          <Row xs={1} md={2} className="g-4">
+          <h1>Shopping Cart</h1>
+
             {
-              products.map(product=><Product product={product} key={product.id}></Product>)
+             
+              items.map(item=>
+                {
+                  
+                  return <Cart item={item} key={item.id}></Cart>
+                }
+              )
             }
-          </Row>
 
     </div>
   )
 }
 
-export default Products
+export default Carts

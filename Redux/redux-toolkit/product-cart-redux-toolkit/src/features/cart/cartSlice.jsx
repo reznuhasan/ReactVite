@@ -9,7 +9,8 @@ export const fetchItem = createAsyncThunk("cart/fetchItem", async () => {
   return res.data
 })
 export const addCartItem = createAsyncThunk("cart/addCartItem", async (item) => {
-  const res = await addItem(item);
+  const {id, title, price,category,stock, thumbnail}=item;
+  const res = await addItem({id, title, price,category,stock, thumbnail,quantity:1});
   return res.data
 })
 export const updateCartItem = createAsyncThunk("cart/updateCartItem", async ({ id, newItem }) => {
