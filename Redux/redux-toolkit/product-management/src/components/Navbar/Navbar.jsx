@@ -4,7 +4,7 @@ import './Navbar.css'
 function Navbar() {
   return (
     <div className='navbar'>
-        <h1>Ecommerce</h1>
+        <h1>REDUX STORE</h1>
         <nav>
             <ul>
                 <li>
@@ -15,6 +15,9 @@ function Navbar() {
                 </li>
                 <li>
                 <NavLink to="/cart">Cart</NavLink>
+                <span>
+                    Cart Items:0
+                </span>
                 </li>
             </ul>
         </nav>
