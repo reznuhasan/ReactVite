@@ -1,9 +1,9 @@
 import  ReactDOM  from "react-dom/client"
-
+import Header from "./Header.js"
 const AppLayout=()=>{
     return(
         <>
-        <h1>Hello React</h1>
+        <Header/>
         </>
     )
 }

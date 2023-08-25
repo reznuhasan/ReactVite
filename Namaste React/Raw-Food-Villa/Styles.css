@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    margin:10px 20px;
+    justify-content: space-between;
+}
+.header>.logo>img{
+    width: 100px;
+    height: 80px;
+}
+.header>ul{
+    display: flex;
+}
+.header>ul>li{
+    list-style: none;
+    padding: 10px;
+}
